@@ -1,0 +1,23 @@
+# vim: ft=ghostty
+theme = "tokyonight"
+background = #1a1b26 
+
+window-decoration = false
+background-opacity = 0.90
+
+
+window-padding-y = 0,0
+window-padding-x = 0,0
+window-padding-balance = true 
+
+keybind = ctrl+1=decrease_font_size:2
+keybind = ctrl+2=increase_font_size:2
+keybind = alt+q=close_surface
+
+cursor-style = bar
+
+font-family = "FiraCode Nerd Font Propo"
+font-family-bold = "FiraCode Nerd Font Propo SemBd"
+font-size = 10
+
+confirm-close-surface = false

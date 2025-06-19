@@ -1,0 +1,138 @@
+{
+  // Top bar settings
+  "layer": "top",
+  "position": "top",
+  "spacing": 14, // Gaps between modules (4px)
+  "margin-top": 6,
+  "margin-right": 8,
+  "margin-left": 8,
+
+  // Choose the order of the modules
+  "modules-center": [
+    "mpris#icon",
+    "mpris",
+    "mpris#prev",
+    "mpris#btn",
+    "mpris#next"
+  ],
+  "modules-left": ["hyprland/workspaces"],
+  "modules-right": ["tray", "pulseaudio", "battery#icon", "network", "clock"],
+
+  // Reload the topbar style of files change
+  "reload_style_on_change": true,
+
+  "mpris#prev": {
+    "format": "",
+    "on-click": "playerctl previous -p spotify"
+  },
+
+  "mpris#btn": {
+    "format": "{status_icon}",
+    "status-icons": {
+      "default": "",
+      "paused": ""
+    },
+    "on-click": "playerctl play-pause -p spotify"
+  },
+
+  "mpris#next": {
+    "format": "",
+    "on-click": "playerctl next -p spotify"
+  },
+
+  "mpris#icon": {
+    "format": "{player_icon}",
+    "player-icons": {
+      "spotify": ""
+    }
+  },
+
+  "mpris": {
+    "format": "{title}",
+    "max-length": 25,
+    "on-click": "playerctl play-pause -p spotify"
+  },
+  // -- Workspaces indicators
+  "hyprland/workspaces": {
+    "disable-scroll": false,
+    "sort-by-name": false,
+    "sort-by-number": true,
+    "all-outputs": false,
+    "warp-on-scroll": false,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "󰓇",
+      "2": "1",
+      "3": "2",
+      "4": "3",
+      "5": "4",
+      "6": "5",
+      "7": "6",
+      "8": "7",
+      "9": "8",
+      "10": "9",
+      "11": "10",
+      "urgent": "",
+      "focused": "",
+      "default": ""
+    }
+  },
+  "clock": {
+    "format": "{:%a %d %h   %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%H-%M-%s}"
+  },
+
+  "tray": {
+    "icon-size": 22,
+    "spacing": 10
+  },
+
+  "battery": {
+    "states": {
+      // "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}%",
+    "format-full": "{capacity}%",
+    "format-charging": "{capacity}%",
+    "format-plugged": "{capacity}%",
+    "format-alt": "{time}"
+  },
+  "battery#icon": {
+    "states": {
+      // "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "tooltip-format": "{capacity}%",
+    "format-full": "{icon}",
+    "format": "{icon}",
+    "format-alt": "{capacity}% {icon}",
+    "format-charging": "􀨣",
+    "format-plugged": "􀨣",
+    "format-icons": ["􀛪", "􀛩", "􀺶", "􀺸", "􀛨"],
+    "interval": 1
+  },
+
+  "network": {
+    "format-ethernet": "",
+    "tooltip-format": "{essid}",
+    "format-disconnected": "",
+    "format-wifi": "􀙇"
+  },
+  "pulseaudio": {
+    "scroll-step": 5, // %, can be a float
+    "format": "{icon}{volume}%",
+    "format-bluetooth": "􁄣􁄢{volume}%",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": "􀊣",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "default": ["􀊡", "􀊥", "􀊧", "􀊩"]
+    },
+    "on-click": "pavucontrol"
+  }
+}
